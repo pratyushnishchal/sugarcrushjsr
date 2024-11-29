@@ -110,7 +110,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           ordersElement.classList.add('animate-in');
           
           // Trigger count-up animation for numbers
-          countUp(customersElement, 100, 2000); // 1500 customers, 2 seconds duration
+          countUp(customersElement, 250, 2000); // 1500 customers, 2 seconds duration
           countUp(ordersElement, 650, 2000); // 2300 orders, 2 seconds duration
           
           // Stop observing after triggering animation
