@@ -857,3 +857,109 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Stats Section */
+.stats-section {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.stats-section .container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.stat-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #25d366;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Animate on Scroll */
+.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .stats-section .container {
+        flex-direction: column;
+        align-items: center; /* Centers the items horizontally */
+        gap: 20px; /* Adjusts the spacing between the items on smaller screens */
+    }
+
+    .stat-item {
+        width: 100%; /* Makes the stat items full-width on mobile */
+        max-width: 300px; /* Optional: Max width to keep them from stretching too far */
+    }
+}
+
+/* Menu Card Section */
+.menu-card-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fffaf0; /* Matches the theme */
+}
+
+.menu-card-section h2 {
+    font-size: 2.5rem;
+    color: #e58f65;
+    margin-bottom: 10px;
+}
+
+.menu-card-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.menu-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-card img {
+    max-width: 500px; /* Set a medium maximum width */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-card img:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+@media (max-width: 768px) {
+    .menu-card img {
+        max-width: 400px; /* Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-card img {
+        max-width: 300px; /* Smaller for phones */
+    }
+}

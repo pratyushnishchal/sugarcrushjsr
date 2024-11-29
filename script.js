@@ -25,7 +25,7 @@ menuLinks.forEach(link => {
     link.addEventListener("click", hideMenu);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get all category links and product cards
     const categoryLinks = document.querySelectorAll('.cake-category');
     const productCards = document.querySelectorAll('.product-card');
@@ -51,14 +51,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Set default category to show (Birthday Cakes)
     showCategory('birthday');
     setActiveCategory('birthday');  // Set the default active category to 'birthday'
 
     // Add event listeners to each category link
     categoryLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const category = link.getAttribute('data-category');
             showCategory(category);  // Show the products for the selected category
@@ -69,11 +69,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Smooth Scroll for Internal Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth',
-                    });
-                });
-            });
-            AOS.init();
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+        });
+    });
+});
+
+  // Initialize counters
+  let customerCount = 0;
+  let orderCount = 0;
+
+  // Function to animate the numbers
+  const countUp = (element, target, duration) => {
+    let start = 0;
+    const stepTime = Math.abs(Math.floor(duration / target));
+    
+    const interval = setInterval(() => {
+      start += 1;
+      element.textContent = start;
+      if (start === target) {
+        clearInterval(interval);
+      }
+    }, stepTime);
+  };
+
+  // Function to trigger animations when the stats section comes into view
+  const animateStats = () => {
+    const statsSection = document.querySelector('.stats-section');
+    const customersElement = document.getElementById('customers-count');
+    const ordersElement = document.getElementById('orders-count');
+
+    // Create an intersection observer to trigger animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate numbers when the section comes into view
+          customersElement.classList.add('animate-in');
+          ordersElement.classList.add('animate-in');
+          
+          // Trigger count-up animation for numbers
+          countUp(customersElement, 100, 2000); // 1500 customers, 2 seconds duration
+          countUp(ordersElement, 650, 2000); // 2300 orders, 2 seconds duration
+          
+          // Stop observing after triggering animation
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5 // Trigger animation when 50% of the section is visible
+    });
+
+    observer.observe(statsSection);
+  };
+
+  // Call the function when the page loads
+  document.addEventListener('DOMContentLoaded', animateStats);
+
+
+
+AOS.init();
