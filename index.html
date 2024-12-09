@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <header class="header" id="home">
         <div class="container" data-aos="fade-down" data-aos-duration="1000">
             <div class="logo">
@@ -36,8 +37,6 @@
             <a href="https://wa.me/7619593362" target="_blank" class="order-now-btn">Order Now</a>
         </div>
     </div>
-
-
     <!-- Products Introduction Section -->
     <div class="products-intro" id="products" data-aos="fade-up" data-aos-duration="1500">
         <h3 class="products-title">Our Delicious Cake Collection</h3>
@@ -150,98 +149,123 @@
             </div>
         </div>
     </div>
-   
+
     <section class="menu-card-section" id="menu">
         <div class="container" data-aos="fade-up" data-aos-duration="1500">
-            <h2>Our Menu</h2>
-            <p>Discover all the delicious treats we offer in one glance!</p>
+            <h2 class="menu-title">Our Menu</h2>
+            <p class="menu-description">Discover all the delicious treats we offer in one glance!</p>
+            <!-- Search Input -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for menu items..." />
+                
+            </div>
             <div class="menu-card">
-                <img src="menu.jpeg" alt="Menu Card - SugarCrush" />
+                <table class="menu-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="menu-items">
+                        <!-- Items will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button id="prev-btn" disabled>Previous</button>
+                <button id="next-btn">Next</button>
             </div>
         </div>
     </section>
-    
+
+
     <!-- About Us Section -->
-<section class="about-us" id="about">
-    <div class="container">
-        <div class="about-content" data-aos="fade-up" data-aos-duration="1500">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>
-                    Welcome to Sugarcrush Cakes! We are passionate bakers who specialize in creating customized cakes for all occasions. From birthdays to weddings, and everything in between, we aim to make your special day even sweeter. Our cakes are made with the finest ingredients and crafted with love, ensuring that every bite is as delightful as the occasion.
-                </p>
-                <p>
-                    At Sugarcrush Cakes, we are committed to providing not only delicious cakes but also the highest level of customer satisfaction. Let us bring your cake vision to life!
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="about.jpg" alt="About Sugarcrush Cakes">
-            </div>
-        </div>
-    </div>
-</section>
-<section id="stats" class="stats-section">
-    <div class="container">
-      <div class="stat-item">
-        <div class="stat-number" id="customers-count">0</div>
-        <div class="stat-label">Customers</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" id="orders-count">0</div>
-        <div class="stat-label">Cakes Delivered</div>
-      </div>
-    </div>
-  </section>
-   <!-- Testimonials Section -->
-<section class="testimonials-section" id="testimonials">
-    <h2 data-aos="fade-up">What Our Customers Say</h2>
-    <p class="testimonials-subtitle" data-aos="fade-up" data-aos-delay="100">
-        Hear directly from our happy customers who made their special occasions even sweeter with our cakes!
-    </p>
-    <div class="testimonials-container">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimonial-quote">❝</div>
-            <p class="testimonial-text">"I have lost the count of cakes I have ordered from her!!
-                Delectable timely and of course Eggless !!
-                What more do u need!!
-                Definitely worth a try!!"</p>
-            <div class="testimonial-author">
-                <img src="users.png" alt="Customer 1">
-                <div>
-                    <h3>Priyasa Jyotishi</h3>
-                    <p>Happy Customer</p>
+    <section class="about-us" id="about">
+        <div class="container">
+            <div class="about-content" data-aos="fade-up" data-aos-duration="1500">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>
+                        Sugar crush was officially inaugurated in the early October of 2021. Started as a pure hobby and
+                        then converted into business turned out to be a splendid idea. sugar crush offers wholesome and
+                        variety of cakes, pastries, donuts and many more. At our bakery everything is pure eggless and
+                        authentic. Sugarcrush offers magnificence at great deals.
+                        Whoever ordered once from sugarcrush becomes an all time regular customer
+                    </p>
+
+                </div>
+                <div class="about-image">
+                    <img src="about.jpg" alt="About Sugarcrush Cakes">
                 </div>
             </div>
         </div>
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="testimonial-quote">❝</div>
-            <p class="testimonial-text">"The best homebaker in town.
-                I have ordered cakes for my special occasions before and the quality & taste is topnotch. Cakes are freshly baked.
-                You can also order donuts and cupcakes those are also great in taste."</p>
-            <div class="testimonial-author">
-                <img src="users.png" alt="Customer 2">
-                <div>
-                    <h3>Mahima Anand</h3>
-                    <p>Happy Customer</p>
+    </section>
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" id="customers-count">0</div>
+                <div class="stat-label">Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="orders-count">0</div>
+                <div class="stat-label">Cakes Delivered</div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <h2 data-aos="fade-up">What Our Customers Say</h2>
+        <p class="testimonials-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Hear directly from our happy customers who made their special occasions even sweeter with our cakes!
+        </p>
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-quote">❝</div>
+                <p class="testimonial-text">"I have lost the count of cakes I have ordered from her!!
+                    Delectable timely and of course Eggless !!
+                    What more do u need!!
+                    Definitely worth a try!!"</p>
+                <div class="testimonial-author">
+                    <img src="users.png" alt="Customer 1">
+                    <div>
+                        <h3>Priyasa Jyotishi</h3>
+                        <p>Happy Customer</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-quote">❝</div>
+                <p class="testimonial-text">"The best homebaker in town.
+                    I have ordered cakes for my special occasions before and the quality & taste is topnotch. Cakes are
+                    freshly baked.
+                    You can also order donuts and cupcakes those are also great in taste."</p>
+                <div class="testimonial-author">
+                    <img src="users.png" alt="Customer 2">
+                    <div>
+                        <h3>Mahima Anand</h3>
+                        <p>Happy Customer</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="testimonial-quote">❝</div>
+                <p class="testimonial-text">"Bought cake from here, it was absolutely fresh and yummy 😍. Love the
+                    design. Would recommend it over any bakery. …"</p>
+                <div class="testimonial-author">
+                    <img src="users.png" alt="Customer 3">
+                    <div>
+                        <h3>Shruti Lal</h3>
+                        <p>Regular Customer</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="testimonial-quote">❝</div>
-            <p class="testimonial-text">"Bought cake from here, it was absolutely fresh and yummy 😍. Love the design. Would recommend it over any bakery. …"</p>
-            <div class="testimonial-author">
-                <img src="users.png" alt="Customer 3">
-                <div>
-                    <h3>Shruti Lal</h3>
-                    <p>Regular Customer</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Side Menu Overlay and Side Menu -->
@@ -290,6 +314,7 @@
     <a href="https://wa.me/7619593362" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
